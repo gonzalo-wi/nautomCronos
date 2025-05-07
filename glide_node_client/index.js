@@ -96,6 +96,18 @@ if (process.argv[2] === "test") {
   syncNovedad(ejemplo).then(res => console.log("Resultado:", res));
 }
 
+// node ./glide_node_client/index.js delete "c7s2TOiTSlS5TZRlwK3O7A"
+export async function deleteNovedad(rowID) {
+  try {
+    await ticketsTable.delete(rowID);
+    console.log(`✅ Registro eliminado: ${rowID}`);
+    return { success: true, action: "delete", id: rowID };
+  } catch (error) {
+    console.error("❌ Error al eliminar registro:", error.message);
+    return { success: false, error: error.message };
+  }
+}
+
 if (process.argv[2] && process.argv[2].startsWith("{")) {
   const novedad = JSON.parse(process.argv[2]);
   syncNovedad(novedad).then(res => console.log("→", res));
