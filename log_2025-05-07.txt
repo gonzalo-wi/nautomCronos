@@ -1,0 +1,4 @@
+Fecha de sincronización: 2025-05-07
+Archivo exportado: ./cronos_export_2025-05-07.csv
+Total registros: 3
+Errores: 0
