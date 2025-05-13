@@ -100,10 +100,10 @@ if (process.argv[2] === "test") {
 export async function deleteNovedad(rowID) {
   try {
     await ticketsTable.delete(rowID);
-    console.log(`✅ Registro eliminado: ${rowID}`);
+    console.log(`Registro eliminado: ${rowID}`);
     return { success: true, action: "delete", id: rowID };
   } catch (error) {
-    console.error("❌ Error al eliminar registro:", error.message);
+    console.error("Error al eliminar registro:", error.message);
     return { success: false, error: error.message };
   }
 }
