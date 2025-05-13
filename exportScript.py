@@ -5,6 +5,9 @@ from dotenv import load_dotenv
 import subprocess
 import os
 import json
+import smtplib
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
 
 # Cargar variables de entorno
 load_dotenv()
@@ -30,6 +33,43 @@ def montar_recurso(ruta, ip, usuario, clave):
             exit()
     else:
         print(f"ℹ️ Recurso {ruta} ya está montado.")
+
+def enviar_email(nombre_fabrica, log_path, destinatario):
+    try:
+        # Configuración del servidor SMTP
+        email_host = os.getenv("EMAIL_HOST")
+        email_port = int(os.getenv("EMAIL_PORT"))
+        email_user = os.getenv("EMAIL_USER")
+        email_password = os.getenv("EMAIL_PASSWORD")
+
+        # Leer el contenido del log
+        with open(log_path, "r", encoding="utf-8") as f:
+            contenido_log = f.read()
+
+        # Crear el mensaje de correo
+        mensaje = MIMEMultipart()
+        mensaje["From"] = email_user
+        mensaje["To"] = destinatario
+        mensaje["Subject"] = f"Novedades sincronizadas - {nombre_fabrica}"
+
+        nombres_fabricas = {
+            "JUM": "Jumillano",
+            "NAFA": "Nafa"
+            }
+        nombre_descriptivo = nombres_fabricas.get(nombre_fabrica, nombre_fabrica)
+
+        cuerpo = f"Hola,\n\nSe han sincronizado las novedades de {nombre_descriptivo}. Aquí tienes el resumen:\n\n{contenido_log}\n\nSaludos."
+
+        mensaje.attach(MIMEText(cuerpo, "plain"))
+
+        # Conectar al servidor SMTP y enviar el correo
+        with smtplib.SMTP_SSL(email_host, email_port) as server:
+            server.login(email_user, email_password)
+            server.sendmail(email_user, destinatario, mensaje.as_string())
+
+        print(f"📧 Correo enviado con éxito a {destinatario}")
+    except Exception as e:
+        print(f"❌ Error al enviar el correo: {e}")
 
 def procesar_cronos(nombre_fabrica, ruta_mdb, creador_id, prefijo_legajo, username, password):
     montar_recurso("/mnt/" + nombre_fabrica.lower(), "192.168.80.200", username, password)
@@ -165,6 +205,10 @@ def procesar_cronos(nombre_fabrica, ruta_mdb, creador_id, prefijo_legajo, userna
                 f.write(f"Errores: {errores}\n")
 
             print(f"📝 Log guardado en: {log_path}")
+
+            # Enviar correo con el log
+            destinatario = os.getenv("EMAIL_TO")
+            enviar_email(nombre_fabrica, log_path, destinatario)
 
     except pyodbc.Error as e:
         print(f"❌ Error con la base de datos de {nombre_fabrica}: {e}")
