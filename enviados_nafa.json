@@ -1,0 +1,64 @@
+[
+    {
+        "idCreador": "NAF-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "NAF-0007",
+        "fechaInicio": "2025-05-19",
+        "fechaFin": "2025-06-02",
+        "fechaCreaciN": "1900-01-01",
+        "comentario": "",
+        "attachment": "",
+        "validaciN": false,
+        "idValidador": "",
+        "lastModified": "",
+        "regiNAsignadaDesdeEjecuciN": "",
+        "eliminar": false
+    },
+    {
+        "idCreador": "NAF-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "NAF-0093",
+        "fechaInicio": "2025-05-12",
+        "fechaFin": "2025-05-26",
+        "fechaCreaciN": "1900-01-01",
+        "comentario": "",
+        "attachment": "",
+        "validaciN": false,
+        "idValidador": "",
+        "lastModified": "",
+        "regiNAsignadaDesdeEjecuciN": "",
+        "eliminar": false
+    },
+    {
+        "ID_Creador": "NAF-2833",
+        "Novedad": "DESC DIAS DE VACACIONES",
+        "ID_Empleado": "NAF-00007",
+        "Fecha_inicio": "19/05/2025",
+        "Fecha_fin": "2025-06-02",
+        "Fecha_str": "1900-01-01"
+    },
+    {
+        "ID_Creador": "NAF-2833",
+        "Novedad": "DESC DIAS DE VACACIONES",
+        "ID_Empleado": "NAF-00093",
+        "Fecha_inicio": "12/05/2025",
+        "Fecha_fin": "2025-05-26",
+        "Fecha_str": "1900-01-01"
+    },
+    {
+        "idCreador": "NAF-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "NAF-00007",
+        "fechaInicio": "2025-05-19",
+        "fechaFin": "2025-06-02",
+        "fechaCreaciN": "1900-01-01"
+    },
+    {
+        "idCreador": "NAF-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "NAF-00093",
+        "fechaInicio": "2025-05-12",
+        "fechaFin": "2025-05-26",
+        "fechaCreaciN": "1900-01-01"
+    }
+]

@@ -1,5 +1,6 @@
 import * as glide from "@glideapps/tables";
 import dotenv from "dotenv";
+import fs from "fs";
 dotenv.config();
 
 const ticketsTable = glide.table({
@@ -23,14 +24,22 @@ const ticketsTable = glide.table({
   }
 });
 
+function esFechaValida(fecha) {
+  return typeof fecha === "string" && !isNaN(Date.parse(fecha));
+}
 
 export async function syncNovedad(novedad) {
   try {
-    
     const registros = await ticketsTable.get();
     console.log("Registros obtenidos:", registros);
 
-   
+    if (!esFechaValida(novedad.fechaInicio) || !esFechaValida(novedad.fechaFin)) {
+      console.error("🛑 Fecha inválida detectada:");
+      console.error("fechaInicio:", novedad.fechaInicio);
+      console.error("fechaFin:", novedad.fechaFin);
+      throw new Error("Invalid fechaInicio o fechaFin en novedad");
+    }
+
     const registroExistente = registros.find(
       (r) =>
         r.idEmpleado === novedad.idEmpleado &&
@@ -40,7 +49,6 @@ export async function syncNovedad(novedad) {
     );
 
     if (registroExistente && registroExistente.$rowID) {
-      
       await ticketsTable.update(registroExistente.$rowID, {
         ...novedad,
         lastModified: new Date().toISOString()
@@ -51,10 +59,11 @@ export async function syncNovedad(novedad) {
       console.error("Error: El registro existente no tiene un $rowID.");
       return { success: false, error: "Registro existente sin $rowID" };
     } else {
-      
       const insertedId = await ticketsTable.add({
         ...novedad,
-        fechaCreaciN: new Date(novedad.fechaCreaciN).toISOString(),
+        fechaCreaciN: esFechaValida(novedad.fechaCreaciN)
+          ? new Date(novedad.fechaCreaciN).toISOString()
+          : new Date().toISOString(),
         fechaInicio: new Date(novedad.fechaInicio).toISOString(),
         fechaFin: new Date(novedad.fechaFin).toISOString(),
         lastModified: new Date().toISOString()
@@ -68,15 +77,16 @@ export async function syncNovedad(novedad) {
   }
 }
 
-
 if (process.argv[2] === "get") {
-  ticketsTable.get().then((registros) => {
-    console.log("Registros obtenidos:", registros);
-  }).catch((error) => {
-    console.error("Error al obtener registros:", error.message);
-  });
+  ticketsTable
+    .get()
+    .then((registros) => {
+      console.log("Registros obtenidos:", registros);
+    })
+    .catch((error) => {
+      console.error("Error al obtener registros:", error.message);
+    });
 }
-
 
 if (process.argv[2] === "test") {
   const ejemplo = {
@@ -93,10 +103,9 @@ if (process.argv[2] === "test") {
     regiNAsignadaDesdeEjecuciN: "",
     eliminar: false
   };
-  syncNovedad(ejemplo).then(res => console.log("Resultado:", res));
+  syncNovedad(ejemplo).then((res) => console.log("Resultado:", res));
 }
 
-// node ./glide_node_client/index.js delete "c7s2TOiTSlS5TZRlwK3O7A"
 export async function deleteNovedad(rowID) {
   try {
     await ticketsTable.delete(rowID);
@@ -110,5 +119,22 @@ export async function deleteNovedad(rowID) {
 
 if (process.argv[2] && process.argv[2].startsWith("{")) {
   const novedad = JSON.parse(process.argv[2]);
-  syncNovedad(novedad).then(res => console.log("→", res));
+  syncNovedad(novedad).then((res) => console.log("→", res));
+}
+
+if (process.argv[2] === "bulk") {
+  try {
+    const registros = JSON.parse(fs.readFileSync("a_enviar.json", "utf8"));
+    console.log(`🧾 Procesando ${registros.length} novedades...`);
+
+    for (const novedad of registros) {
+      const resultado = await syncNovedad(novedad);
+      console.log("→", resultado);
+    }
+
+    process.exit(0);
+  } catch (error) {
+    console.error("❌ Error en modo bulk:", error.message);
+    process.exit(1);
+  }
 }

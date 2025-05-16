@@ -1,4 +1,3 @@
 Fecha de sincronización: 2025-05-13
-Archivo exportado: ./cronos_export_JUM_2025-05-13.csv
 Total registros: 7
 Errores: 0
