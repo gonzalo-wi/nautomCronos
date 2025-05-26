@@ -18,53 +18,42 @@ def limpiar_fechas_dict(row):
     return row
 
 def procesar_cronos(nombre_fabrica, ruta_mdb, creador_id, prefijo_legajo):
-    """
-    Procesa las novedades de una fábrica, sincroniza con Glide y envía un correo con el log.
-    """
     conn_str = r"DRIVER={MDBTools};" + fr"DBQ={ruta_mdb};"
     try:
-        # Crear conexión con SQLAlchemy
         engine = create_engine(f"access+pyodbc:///?odbc_connect={conn_str}")
 
-        # Leer las tablas necesarias
         novedades = pd.read_sql("SELECT * FROM Novedades", engine)
         rel_novedad_persona = pd.read_sql("SELECT * FROM Rel_Novedad_Persona", engine)
         personas = pd.read_sql("SELECT * FROM Personas", engine)
         justificaciones = pd.read_sql("SELECT * FROM justificaciones", engine)
 
-        # Combinar tablas
         df = pd.merge(novedades, rel_novedad_persona, on="idNovedad")
         df = pd.merge(df, personas, on="idPersona")
         df = pd.merge(df, justificaciones, left_on="nov_justificacion", right_on="IdJustificacion", how="left")
 
-        # Validar columnas necesarias
+        df = df[df["per_numero"].notnull()]
+        df = df.drop_duplicates(subset=["per_numero", "jus_descripcion", "nov_Desde", "nov_Hasta"])
+        df["per_numero"] = df["per_numero"].astype(float).astype(int).astype(str)
+
         if "jus_descripcion" not in df.columns:
             raise KeyError(f"La columna 'jus_descripcion' no está presente en los datos de {nombre_fabrica}.")
-        if "per_legajo" not in df.columns:
-            raise KeyError(f"La columna 'per_legajo' no está presente en los datos combinados de {nombre_fabrica}. Verifica la tabla Personas.")
-        if df["per_legajo"].isnull().any():
-            raise ValueError(f"Se encontraron valores nulos en la columna 'per_legajo' en los datos de {nombre_fabrica}.")
+        if "per_numero" not in df.columns:
+            raise KeyError(f"La columna 'per_numero' no está presente en los datos combinados de {nombre_fabrica}. Verifica la tabla Personas.")
 
-        # Depurar datos combinados
         print(f"🔍 Columnas en los datos combinados para {nombre_fabrica}:")
         print(df.columns)
-        print(f"🔎 Primeros valores de 'per_legajo' en {nombre_fabrica}:")
-        print(df["per_legajo"].head())
+        print(f"🔎 Primeros valores de 'per_numero' en {nombre_fabrica}:")
+        print(df["per_numero"].head())
 
-        if df["per_legajo"].isnull().all():
-            raise ValueError(f"Todos los valores en 'per_legajo' son nulos en los datos de {nombre_fabrica}.")
+        if df["per_numero"].isnull().all():
+            raise ValueError(f"Todos los valores en 'per_numero' son nulos en los datos de {nombre_fabrica}.")
 
-        # Convertir 'per_legajo' a cadena para evitar problemas con ceros a la izquierda
-        df["per_legajo"] = df["per_legajo"].astype(str)
-
-        # Agregar columnas adicionales
         df["ID_Creador"] = creador_id
         print(f"🧪 Creando columna 'ID_Empleado' con prefijo: {prefijo_legajo}")
-        df["ID_Empleado"] = prefijo_legajo + df["per_legajo"].str.zfill(4)
+        df["ID_Empleado"] = prefijo_legajo + df["per_numero"].str.lstrip("0")
         print(f"✅ Primeros valores de 'ID_Empleado':")
         print(df["ID_Empleado"].head())
 
-        # Renombrar columnas
         df.rename(columns={
             "jus_descripcion": "Novedad",
             "nov_Desde": "Fecha_inicio",
@@ -72,29 +61,25 @@ def procesar_cronos(nombre_fabrica, ruta_mdb, creador_id, prefijo_legajo):
             "nov_DesdeStr": "Fecha_str"
         }, inplace=True)
 
-        # Procesar fechas correctamente
-        df["Fecha_str"] = df["Fecha_str"].fillna("01/01/1900")
-        df["Fecha_str"] = df["Fecha_str"].where(df["Fecha_str"].str.match(r"^\d{2}/\d{2}/\d{4}$", na=False), "01/01/1900")
-        df["Fecha_str"] = pd.to_datetime(df["Fecha_str"], format="%d/%m/%Y", errors="coerce")
-        # Aquí aseguramos que ambas fechas estén en formato ISO
+        df["Fecha_str"] = datetime.now().strftime("%Y-%m-%d")
         df["Fecha_inicio"] = pd.to_datetime(df["Fecha_inicio"], format="%d/%m/%Y", errors="coerce").dt.strftime("%Y-%m-%d")
-        df["Fecha_fin"] = pd.to_datetime(df["Fecha_fin"], errors="coerce").dt.strftime("%Y-%m-%d")
+        df["Fecha_fin"] = pd.to_datetime(df["Fecha_fin"], format="%d/%m/%Y", errors="coerce").dt.strftime("%Y-%m-%d")
 
-        # Verificar valores nulos después de la conversión
-        if df["Fecha_str"].isnull().any():
-            print(f"⚠️ Se encontraron valores nulos en Fecha_str después de la conversión.")
-            df["Fecha_str"] = df["Fecha_str"].fillna(pd.Timestamp("1900-01-01"))
+        # Agregar columnas requeridas por Glide
+        df["idCronos"] = df["idNovedad"].astype(str)
+        df["source"] = "ApiJumi"
 
         # Filtrar por fechas
         hoy = datetime.now().date()
         df = df[pd.to_datetime(df["Fecha_fin"], errors="coerce") >= pd.Timestamp(hoy)]
 
-        # Mostrar columnas antes de exportar
         print(f"📦 Columnas disponibles antes de exportar en {nombre_fabrica}:")
         print(df.columns)
 
         # Preparar datos para exportar
-        required_columns = ["ID_Creador", "Novedad", "ID_Empleado", "Fecha_inicio", "Fecha_fin", "Fecha_str"]
+        required_columns = [
+            "ID_Creador", "Novedad", "ID_Empleado", "Fecha_inicio", "Fecha_fin", "Fecha_str", "idCronos", "source"
+        ]
         missing_columns = [col for col in required_columns if col not in df.columns]
         if missing_columns:
             raise KeyError(f"Faltan las siguientes columnas en los datos combinados: {missing_columns}")
@@ -108,7 +93,9 @@ def procesar_cronos(nombre_fabrica, ruta_mdb, creador_id, prefijo_legajo):
             "ID_Empleado": "idEmpleado",
             "Fecha_inicio": "fechaInicio",
             "Fecha_fin": "fechaFin",
-            "Fecha_str": "fechaCreaciN"
+            "Fecha_str": "fechaCreaciN",
+            "idCronos": "idCronos",
+            "source": "source"
         })
 
         # Validar las fechas antes de enviarlas

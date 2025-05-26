@@ -505,178 +505,506 @@
     },
     {
         "idCreador": "JUM-2833",
-        "novedad": "ENFERMEDAD",
-        "idEmpleado": "JUM-1572",
-        "fechaInicio": "2025-04-22",
-        "fechaFin": "2025-05-21",
-        "fechaCreaciN": "2025-05-21"
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1268",
+        "fechaInicio": "2024-12-16",
+        "fechaFin": "2025-07-01",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
-        "novedad": "AUSENCIA INJUSTIFICADA",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1822",
+        "fechaInicio": "2024-12-16",
+        "fechaFin": "2025-07-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2192",
+        "fechaInicio": "2024-12-16",
+        "fechaFin": "2025-07-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DIAS NO TRABAJADOS",
+        "idEmpleado": "JUM-2201",
+        "fechaInicio": "2024-12-23",
+        "fechaFin": "2025-07-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2485",
+        "fechaInicio": "2024-12-09",
+        "fechaFin": "2025-08-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
         "idEmpleado": "JUM-2732",
-        "fechaInicio": "2025-04-28",
-        "fechaFin": "2025-05-25",
-        "fechaCreaciN": "2025-05-21"
+        "fechaInicio": "2024-12-17",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "ENFERMEDAD",
-        "idEmpleado": "JUM-1572",
-        "fechaInicio": "2025-04-28",
-        "fechaFin": "2025-05-21",
-        "fechaCreaciN": "2025-05-21"
+        "idEmpleado": "JUM-2485",
+        "fechaInicio": "2024-12-09",
+        "fechaFin": "2025-08-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2623",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2052",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-11-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2195",
+        "fechaInicio": "2025-01-06",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "ENFERMEDAD ART",
-        "idEmpleado": "JUM-2668",
-        "fechaInicio": "2025-05-02",
-        "fechaFin": "2025-05-29",
-        "fechaCreaciN": "2025-05-21"
+        "idEmpleado": "JUM-2634",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-09-05",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "ENFERMEDAD",
-        "idEmpleado": "JUM-1183",
-        "fechaInicio": "2025-04-29",
-        "fechaFin": "2025-05-25",
-        "fechaCreaciN": "2025-05-21"
+        "idEmpleado": "JUM-1983",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-11-01",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-1918",
+        "idEmpleado": "JUM-1026",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-10-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-270",
+        "fechaInicio": "2024-12-28",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2478",
+        "fechaInicio": "2025-01-27",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-540",
+        "fechaInicio": "2025-01-27",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1136",
+        "fechaInicio": "2025-01-27",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-4",
+        "fechaInicio": "2025-01-27",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2195",
+        "fechaInicio": "2025-01-06",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2453",
+        "fechaInicio": "2025-01-06",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2572",
+        "fechaInicio": "2025-01-06",
+        "fechaFin": "2025-12-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-222",
+        "fechaInicio": "2025-01-20",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1894",
+        "fechaInicio": "2025-01-20",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1794",
+        "fechaInicio": "2025-01-20",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2764",
+        "fechaInicio": "2025-01-02",
+        "fechaFin": "2025-08-01",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-1919",
+        "fechaInicio": "2025-01-15",
+        "fechaFin": "2025-12-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-1983",
+        "fechaInicio": "2025-01-15",
+        "fechaFin": "2025-11-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2623",
+        "fechaInicio": "2025-01-25",
+        "fechaFin": "2025-11-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2697",
+        "fechaInicio": "2025-02-01",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2759",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2512",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1847",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2459",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2385",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2704",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2630",
+        "fechaInicio": "2025-02-03",
+        "fechaFin": "2025-09-02",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1873",
+        "fechaInicio": "2025-02-24",
+        "fechaFin": "2025-09-03",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2282",
+        "fechaInicio": "2025-02-24",
+        "fechaFin": "2025-09-03",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2302",
+        "fechaInicio": "2025-02-24",
+        "fechaFin": "2025-09-03",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1636",
+        "fechaInicio": "2025-02-17",
+        "fechaFin": "2025-09-03",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2523",
+        "fechaInicio": "2025-03-06",
+        "fechaFin": "2025-07-03",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1694",
+        "fechaInicio": "2025-03-29",
+        "fechaFin": "2025-07-04",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2667",
+        "fechaInicio": "2025-03-29",
+        "fechaFin": "2025-06-04",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2767",
+        "fechaInicio": "2025-03-29",
+        "fechaFin": "2025-06-04",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2761",
+        "fechaInicio": "2025-03-29",
+        "fechaFin": "2025-06-04",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1050",
+        "fechaInicio": "2025-03-31",
+        "fechaFin": "2025-10-04",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1781",
+        "fechaInicio": "2025-04-07",
+        "fechaFin": "2025-06-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2070",
+        "fechaInicio": "2025-04-14",
+        "fechaFin": "2025-06-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1806",
+        "fechaInicio": "2025-04-21",
+        "fechaFin": "2025-09-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2251",
+        "fechaInicio": "2025-04-21",
+        "fechaFin": "2025-12-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2166",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-12-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-2206",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-12-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-1919",
+        "fechaInicio": "2025-04-15",
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-2884",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-07-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-1919",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-12-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD",
+        "idEmpleado": "JUM-1983",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-12-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "ENFERMEDAD ART",
+        "idEmpleado": "JUM-2634",
+        "fechaInicio": "2025-04-28",
+        "fechaFin": "2025-09-05",
+        "fechaCreaciN": "2025-05-19"
+    },
+    {
+        "idCreador": "JUM-2833",
+        "novedad": "DESC DIAS DE VACACIONES",
+        "idEmpleado": "JUM-1543",
         "fechaInicio": "2025-05-05",
-        "fechaFin": "2025-05-26",
-        "fechaCreaciN": "2025-05-21"
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2313",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2428",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2538",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2575",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2577",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2638",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2639",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2647",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-05-29",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2745",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-26",
+        "idEmpleado": "JUM-2434",
         "fechaInicio": "2025-05-05",
-        "fechaFin": "2025-05-26",
-        "fechaCreaciN": "2025-05-21"
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-407",
+        "idEmpleado": "JUM-915",
         "fechaInicio": "2025-05-05",
-        "fechaFin": "2025-05-26",
-        "fechaCreaciN": "2025-05-21"
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2252",
-        "fechaInicio": "2025-05-12",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2362",
-        "fechaInicio": "2025-05-26",
-        "fechaFin": "2025-06-01",
-        "fechaCreaciN": "2025-05-21"
-    },
-    {
-        "idCreador": "JUM-2833",
-        "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2554",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
+        "idEmpleado": "JUM-2013",
+        "fechaInicio": "2025-05-05",
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
         "idEmpleado": "JUM-2734",
         "fechaInicio": "2025-05-26",
-        "fechaFin": "2025-06-08",
-        "fechaCreaciN": "2025-05-21"
+        "fechaFin": "2025-08-06",
+        "fechaCreaciN": "2025-05-19"
     },
     {
         "idCreador": "JUM-2833",
         "novedad": "DESC DIAS DE VACACIONES",
-        "idEmpleado": "JUM-2334",
-        "fechaInicio": "2025-05-19",
-        "fechaFin": "2025-06-02",
-        "fechaCreaciN": "2025-05-21"
+        "idEmpleado": "JUM-2801",
+        "fechaInicio": "2025-05-05",
+        "fechaFin": "2025-11-05",
+        "fechaCreaciN": "2025-05-19"
     }
 ]

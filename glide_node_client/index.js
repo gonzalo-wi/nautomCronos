@@ -20,7 +20,9 @@ const ticketsTable = glide.table({
     idValidador: { type: "string", name: "Validador" },
     lastModified: { type: "date-time", name: "59m64" },
     regiNAsignadaDesdeEjecuciN: { type: "string", name: "jOlLV" },
-    eliminar: { type: "boolean", name: "6B3Yp" }
+    eliminar: { type: "boolean", name: "6B3Yp" },
+    source: { type: "string", name: "YktKM" },
+    idCronos: { type: "string", name: "yITBB" }
   }
 });
 
@@ -101,7 +103,9 @@ if (process.argv[2] === "test") {
     validaciN: false,
     idValidador: "",
     regiNAsignadaDesdeEjecuciN: "",
-    eliminar: false
+    eliminar: false,
+    source: "ApiJumi",
+    idCronos: "123456"
   };
   syncNovedad(ejemplo).then((res) => console.log("Resultado:", res));
 }
@@ -127,12 +131,16 @@ if (process.argv[2] === "bulk") {
     const registros = JSON.parse(fs.readFileSync("a_enviar.json", "utf8"));
     console.log(`🧾 Procesando ${registros.length} novedades...`);
 
-    for (const novedad of registros) {
-      const resultado = await syncNovedad(novedad);
-      console.log("→", resultado);
-    }
-
-    process.exit(0);
+    (async () => {
+      for (const novedad of registros) {
+        // Asegura que source e idCronos estén presentes
+        if (!novedad.source) novedad.source = "ApiJumi";
+        if (!novedad.idCronos && novedad.idCronos !== "") novedad.idCronos = novedad.idCronos || "";
+        const resultado = await syncNovedad(novedad);
+        console.log("→", resultado);
+      }
+      process.exit(0);
+    })();
   } catch (error) {
     console.error("❌ Error en modo bulk:", error.message);
     process.exit(1);
